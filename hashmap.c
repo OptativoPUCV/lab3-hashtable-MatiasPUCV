@@ -87,10 +87,6 @@ Pair *searchMap(HashMap *map, char *key) {
   long pos = hash(key, map->capacity);
   map->current = pos;
 
-  
-  while (is_equal(map->buckets[pos]->key, key))
-    pos = (pos + 1) % map->capacity;
-
   return map->buckets[pos];
 }
 
