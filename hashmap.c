@@ -73,7 +73,21 @@ void insertMap(HashMap *map, char *key, void *value) {
 void enlarge(HashMap *map) {
   enlarge_called = 1; // no borrar (testing purposes)
 
+  Pair** old = map->buckets;
+  map->buckets = malloc(sizeof(Pair*) * map->capacity * 2);
+  long tempCap = map->capacity;
+  map->size = 0;
 
+  map->capacity *= 2;
+
+  for (long int i = 0; i < tempCap; i++)
+    {
+      Pair* temp = old[i];
+      if(temp != NULL)
+      {
+        insertMap(map, temp->key, temp->value);
+      }
+    }
 }
 
 HashMap *createMap(long capacity) {
