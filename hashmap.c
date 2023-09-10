@@ -145,7 +145,7 @@ Pair *nextMap(HashMap *map)
 {
   long pos = map->current + 1;
 
-  if (pos >= map->capacity)
+  if (pos >= map->capacity - 1)
     return NULL;
 
   map->current = pos;
