@@ -133,7 +133,7 @@ Pair *firstMap(HashMap *map)
     {
       pos = pos % map->capacity;
 
-      if (pos == temp || pos == map->capacity)
+      if (pos == temp || pos == map->capacity - 1)
         return NULL;
     }
 
