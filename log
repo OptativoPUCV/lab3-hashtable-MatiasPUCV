@@ -19,3 +19,14 @@ hashmap.c:59:11: error: ‘*hashMap.buckets’ is used uninitialized [-Werror=un
 cc1: all warnings being treated as errors
 Compilation failed
 aa1000e
+Sun 10 Sep 2023 01:49:52 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:59:20: error: assignment to ‘Pair **’ from incompatible pointer type ‘Pair *’ [-Werror=incompatible-pointer-types]
+   59 |   hashMap->buckets = buckets;
+      |                    ^
+cc1: all warnings being treated as errors
+Compilation failed
+079fb0e
