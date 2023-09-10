@@ -90,7 +90,10 @@ void eraseMap(HashMap *map, char *key) {
 
   Pair* temp = searchMap(map, key);
   if (temp != NULL)
+  {
     temp->key = NULL;
+    map->size--;
+  }
   
 }
 
