@@ -539,3 +539,14 @@ hashmap.c:79:9: error: variable ‘temp’ set but not used [-Werror=unused-but-
 cc1: all warnings being treated as errors
 Compilation failed
 2be7918
+Sun 10 Sep 2023 07:43:20 PM UTC: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:79:9: error: variable ‘temp’ set but not used [-Werror=unused-but-set-variable]
+   79 |   Pair* temp = firstMap(map);
+      |         ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+9c906ec

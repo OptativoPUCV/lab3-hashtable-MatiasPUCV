@@ -84,6 +84,7 @@ void enlarge(HashMap *map) {
     }
 
   map->buckets = new;
+  map->capacity *= 2;
   free(old);
 }
 
