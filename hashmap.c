@@ -74,7 +74,17 @@ void enlarge(HashMap *map) {
   enlarge_called = 1; // no borrar (testing purposes)
 
   Pair** old = map->buckets;
-  
+  Pair** new = malloc(sizeof(Pair*) * map->capacity * 2);
+
+  Pair* temp = firstMap(map);
+  for (long int i = 0; i < map->size; i++)
+    {
+      old[map->current] = new[map->current];
+      temp = nextMap(map);
+    }
+
+  map->buckets = new;
+  free(old);
 }
 
 HashMap *createMap(long capacity) {

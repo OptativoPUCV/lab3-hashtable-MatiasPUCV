@@ -528,3 +528,14 @@ hashmap.c:76:10: error: unused variable ‘old’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 732774a
+Sun 10 Sep 2023 07:42:43 PM UTC: 
+ hashmap.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:79:9: error: variable ‘temp’ set but not used [-Werror=unused-but-set-variable]
+   79 |   Pair* temp = firstMap(map);
+      |         ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+2be7918
