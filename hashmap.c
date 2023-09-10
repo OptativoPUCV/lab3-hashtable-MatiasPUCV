@@ -87,12 +87,11 @@ HashMap *createMap(long capacity) {
 }
 
 void eraseMap(HashMap *map, char *key) {
-  long pos = hash(key, map->capacity) % map->capacity;
 
-  if (!isEmptyPair(map->buckets[pos])) {
-    map->buckets[pos]->key = NULL;
-    map->size--;
-  }
+  Pair* temp = searchMap(map, key);
+  if (temp != NULL)
+    temp->key = NULL;
+  
 }
 
 bool searchHelper(Pair *pair, char *key) {
