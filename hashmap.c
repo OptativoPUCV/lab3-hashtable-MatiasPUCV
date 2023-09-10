@@ -84,10 +84,10 @@ void enlarge(HashMap *map) {
     {
       Pair* temp = old[i];
       if(temp != NULL)
-      {
         insertMap(map, temp->key, temp->value);
-      }
     }
+
+  free(old);
 }
 
 HashMap *createMap(long capacity) {
