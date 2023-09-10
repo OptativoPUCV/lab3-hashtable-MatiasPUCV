@@ -127,7 +127,7 @@ Pair *firstMap(HashMap *map)
 {
   
   long pos = map->current;
-  long temp = pos;
+  long temp = (pos - 1) % map->capacity;
 
   while (!isEmptyPair(map->buckets[pos]))
     {
