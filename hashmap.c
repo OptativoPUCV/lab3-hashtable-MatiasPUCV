@@ -131,9 +131,9 @@ Pair *firstMap(HashMap *map)
 
   while (!isEmptyPair(map->buckets[pos]))
     {
-      pos = (pos + 1) % map->capacity;
+      pos = pos % map->capacity;
 
-      if (pos == temp)
+      if (pos == temp || pos == map->capacity)
         return NULL;
     }
 
