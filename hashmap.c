@@ -105,7 +105,7 @@ Pair *searchMap(HashMap *map, char *key) {
   while (!searchHelper(map->buckets[pos], key))
     pos = (pos + 1) % map->capacity;
 
-  map->capacity = pos;
+  map->current = pos;
 
   return map->buckets[pos];
 }
