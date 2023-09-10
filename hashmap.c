@@ -40,10 +40,8 @@ int is_equal(void *key1, void *key2) {
   return 0;
 }
 
-bool isEmptyPair(Pair* pair)
-{
-  if(pair != NULL)
-  {
+bool isEmptyPair(Pair *pair) {
+  if (pair != NULL) {
     if (pair->key != NULL)
       return true;
   }
@@ -91,17 +89,17 @@ Pair *searchMap(HashMap *map, char *key) {
 
   bool end = false;
   while (!end)
+  {
+    if(map->buckets[pos] != NULL)
     {
-      if (!isEmptyPair(map->buckets[pos]))
-      {
-        if(is_equal(map->buckets[pos]->key, key))
-          end = true;
-      }
-      else
-      {
-        pos++;
-      }
+      printf("key: %s\n", map->buckets[pos]->key);
+      end = true;
     }
+    else
+    {
+      pos++;
+    }
+  }
 
   return map->buckets[pos];
 }
