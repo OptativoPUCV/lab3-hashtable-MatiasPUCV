@@ -138,6 +138,8 @@ Pair *firstMap(HashMap *map)
     }
 
   map->current = pos;
+
+  printf("%ld\n", pos);
   
   return map->buckets[pos];
 }
