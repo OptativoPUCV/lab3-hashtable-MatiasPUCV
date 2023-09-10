@@ -87,7 +87,7 @@ void eraseMap(HashMap *map, char *key)
     
     if(!isEmptyPair(map->buckets[pos]))
     {
-      map->buckets[pos].key = NULL;
+      map->buckets[pos]->key = NULL;
       map->size--;
     }
 }
