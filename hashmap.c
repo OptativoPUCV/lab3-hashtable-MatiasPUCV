@@ -144,7 +144,7 @@ Pair *firstMap(HashMap *map)
 
 Pair *nextMap(HashMap *map)
 {
-   long pos = (map->current + 1) % map->capacity - 1;
+   long pos = (map->current + 1) % map->capacity;
     map->current = pos;
 
   return firstMap(map);
