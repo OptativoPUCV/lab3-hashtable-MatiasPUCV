@@ -130,7 +130,6 @@ Pair *firstMap(HashMap *map)
 
   while (!isEmptyPair(map->buckets[pos]))
     {
-      map->current = pos;
       pos = (pos + 1) % map->capacity;
 
       if (pos == temp)
@@ -142,4 +141,10 @@ Pair *firstMap(HashMap *map)
   return map->buckets[pos];
 }
 
-Pair *nextMap(HashMap *map) { return NULL; }
+Pair *nextMap(HashMap *map)
+{
+   long pos = (map->current + 1) % map->capacity;
+    map->current = pos;
+
+  return firstMap(map);
+}
