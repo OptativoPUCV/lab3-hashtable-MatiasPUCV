@@ -125,7 +125,7 @@ Pair *searchMap(HashMap *map, char *key) {
 
 Pair *firstMap(HashMap *map)
 {
-  printf("%l\n", map->capacity);
+  printf("%ld \n", map->capacity);
   
   long pos = map->current;
   long temp = pos;

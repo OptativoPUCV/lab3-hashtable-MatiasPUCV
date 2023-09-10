@@ -434,3 +434,9 @@ hashmap.c:128:10: error: too many arguments for format [-Werror=format-extra-arg
 cc1: all warnings being treated as errors
 Compilation failed
 1f08495
+Sun 10 Sep 2023 06:29:03 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  15|2
+total_score: 50/70
+976c3bf
