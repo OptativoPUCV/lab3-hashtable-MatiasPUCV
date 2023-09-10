@@ -125,10 +125,11 @@ Pair *searchMap(HashMap *map, char *key) {
 
 Pair *firstMap(HashMap *map)
 {
-  printf("%ld \n", map->capacity);
   
   long pos = map->current;
   long temp = pos;
+  
+  printf("%ld \n", pos);
 
   while (!isEmptyPair(map->buckets[pos]))
     {
