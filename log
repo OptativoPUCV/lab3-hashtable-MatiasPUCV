@@ -56,3 +56,14 @@ hashmap.c:63:10: error: function returns address of local variable [-Werror=retu
 cc1: all warnings being treated as errors
 Compilation failed
 ca02088
+Sun 10 Sep 2023 02:05:30 AM UTC: 
+ hashmap.c | 13 +++++++------
+ 1 file changed, 7 insertions(+), 6 deletions(-)
+In file included from test.c:4:
+test.c: In function ‘createMap’:
+hashmap.c:59:11: error: ‘*hashMap.buckets’ is used uninitialized [-Werror=uninitialized]
+   59 |   *hashMap->buckets = buckets;
+      |    ~~~~~~~^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+deae6df
