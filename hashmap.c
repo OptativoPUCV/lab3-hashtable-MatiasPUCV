@@ -83,7 +83,7 @@ Pair *searchMap(HashMap *map, char *key) {
     {
       if (map->buckets[pos] != NULL)
       {
-        if(is_equal(map->buckets[pos]->key, key)
+        if(is_equal(map->buckets[pos]->key, key))
           end == true;
       }
       else
