@@ -53,10 +53,14 @@ void enlarge(HashMap * map) {
 
 HashMap * createMap(long capacity) {
 
-  HashMap* hashMap = malloc(sizeof(HashMap));
+  HashMap hashMap;
 
+  hashMap.bucket = malloc(sizeof(Pair) * capacity);
+  hashMap.capacity = capacity;
+  hashMap.current = 0;
+  hashMap.size = 0;
   
-  return hashMap;
+  return &hashMap;
 }
 
 

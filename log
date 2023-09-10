@@ -41,3 +41,18 @@ Sun 10 Sep 2023 02:02:47 AM UTC:
  1 file changed, 4 deletions(-)
  tests:  0|0
 8ca4f45
+Sun 10 Sep 2023 02:04:51 AM UTC: 
+ hashmap.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:58:11: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘bucket’; did you mean ‘buckets’?
+   58 |   hashMap.bucket = malloc(sizeof(Pair) * capacity);
+      |           ^~~~~~
+      |           buckets
+hashmap.c:63:10: error: function returns address of local variable [-Werror=return-local-addr]
+   63 |   return &hashMap;
+      |          ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+ca02088
