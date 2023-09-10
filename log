@@ -420,3 +420,17 @@ hashmap.c:128:12: error: format ‘%i’ expects argument of type ‘int’, but
 cc1: all warnings being treated as errors
 Compilation failed
 df5c304
+Sun 10 Sep 2023 06:28:22 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:128:13: error: unknown conversion type character ‘\x0a’ in format [-Werror=format=]
+  128 |   printf("%l\n", map->capacity);
+      |             ^~
+hashmap.c:128:10: error: too many arguments for format [-Werror=format-extra-args]
+  128 |   printf("%l\n", map->capacity);
+      |          ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+1f08495
