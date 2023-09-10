@@ -125,29 +125,24 @@ Pair *searchMap(HashMap *map, char *key) {
 
 Pair *firstMap(HashMap *map)
 {
-  
   long pos = map->current;
   long temp = pos;
 
   while (!isEmptyPair(map->buckets[pos]))
     {
-      pos = pos % map->capacity;
+      pos = (pos + 1) % map->capacity;
 
-      if (pos == temp || pos == map->capacity - 1)
+      if (pos == temp)
         return NULL;
     }
 
   map->current = pos;
-
-  printf("%ld\n", pos);
   
   return map->buckets[pos];
 }
 
 Pair *nextMap(HashMap *map)
 {
-   long pos = (map->current + 1) % map->capacity;
-    map->current = pos;
-
+  map->current++;
   return firstMap(map);
 }
