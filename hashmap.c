@@ -55,9 +55,14 @@ void insertMap(HashMap *map, char *key, void *value) {
     return;
 
   long pos = hash(key, map->capacity);
+  long temp = pos;
 
   while (isEmptyPair(map->buckets[pos]))
-    pos = (pos + 1) % map->capacity;
+    {
+      pos = (pos + 1) % map->capacity;
+      if (pos == temp)
+        return;
+    }
 
   map->buckets[pos] = createPair(key, value);
 
@@ -101,9 +106,15 @@ bool searchHelper(Pair *pair, char *key) {
 Pair *searchMap(HashMap *map, char *key) {
 
   long pos = hash(key, map->capacity);
+  long temp = pos;
 
   while (!searchHelper(map->buckets[pos], key))
-    pos = (pos + 1) % map->capacity;
+    {
+      pos = (pos + 1) % map->capacity;
+      if (pos == temp)
+        return NULL;
+      
+    }
 
   map->current = pos;
 
