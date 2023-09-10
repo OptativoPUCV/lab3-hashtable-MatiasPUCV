@@ -92,8 +92,8 @@ Pair *searchMap(HashMap *map, char *key) {
   {
     if(map->buckets[pos] != NULL)
     {
-      printf("key: %s\n", map->buckets[pos]->key);
-      end = true;
+      if(is_equal(map->buckets[pos]->key, key))
+        end = true;
     }
     else
     {
