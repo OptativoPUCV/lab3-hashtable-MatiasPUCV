@@ -40,6 +40,17 @@ int is_equal(void *key1, void *key2) {
   return 0;
 }
 
+bool isEmptyPair(Pair* pair)
+{
+  if(pair != NULL)
+  {
+    if (pair->key != NULL)
+      return false;
+  }
+
+  return true;
+}
+
 void insertMap(HashMap *map, char *key, void *value) {
 
   if (map->size == map->capacity)
@@ -47,7 +58,7 @@ void insertMap(HashMap *map, char *key, void *value) {
 
   long pos = hash(key, map->capacity);
 
-  while (map->buckets[pos] != NULL)
+  while (isEmptyPair(map->buckets[pos]))
     pos = (pos + 1) % map->capacity;
 
   map->buckets[pos] = createPair(key, value);
@@ -77,8 +88,6 @@ void eraseMap(HashMap *map, char *key) {}
 Pair *searchMap(HashMap *map, char *key) {
   long pos = hash(key, map->capacity);
   map->current = pos;
-
-  
 
   return map->buckets[pos];
 }
