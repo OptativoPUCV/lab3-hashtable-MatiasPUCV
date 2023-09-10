@@ -123,6 +123,20 @@ Pair *searchMap(HashMap *map, char *key) {
   return map->buckets[pos];
 }
 
-Pair *firstMap(HashMap *map) { return NULL; }
+Pair *firstMap(HashMap *map)
+{
+  long pos = map->current;
+  long temp = pos;
+
+  while (!isEmptyPair(map->buckets[pos]))
+    {
+      pos = (pos + 1) % map->capacity;
+
+      if (pos == temp)
+        return NULL;
+    }
+  
+  return map->buckets[pos];
+}
 
 Pair *nextMap(HashMap *map) { return NULL; }
