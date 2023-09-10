@@ -44,7 +44,9 @@ bool isEmptyPair(Pair* pair)
 {
   if(pair != NULL)
   {
-    if (pair->key != NULL)
+    if (pair->key == NULL)
+      return true;
+    else
       return false;
   }
 
