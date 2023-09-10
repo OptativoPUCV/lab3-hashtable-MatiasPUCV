@@ -125,6 +125,9 @@ Pair *searchMap(HashMap *map, char *key) {
 
 Pair *firstMap(HashMap *map)
 {
+  if (map->current > map->capacity)
+    return NULL;
+  
   long pos = map->current;
   long temp = pos;
 
