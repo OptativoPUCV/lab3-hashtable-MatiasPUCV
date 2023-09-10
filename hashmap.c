@@ -143,6 +143,12 @@ Pair *firstMap(HashMap *map)
 
 Pair *nextMap(HashMap *map)
 {
-  map->current++;
+  long pos = map->current + 1;
+
+  if (pos >= map->capacity)
+    return NULL;
+
+  map->current = pos;
+  
   return firstMap(map);
 }
