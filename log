@@ -296,3 +296,14 @@ Sun 10 Sep 2023 05:28:09 PM UTC:
  tests:  5|4
 total_score: 30/70
 ccb1ba1
+Sun 10 Sep 2023 05:29:08 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:90:24: error: ‘*(map->buckets + (sizetype)((long unsigned int)pos * 8))’ is a pointer; did you mean to use ‘->’?
+   90 |       map->buckets[pos].key = NULL;
+      |                        ^
+      |                        ->
+Compilation failed
+bdddd4f
