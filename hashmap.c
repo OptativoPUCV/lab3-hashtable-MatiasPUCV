@@ -44,13 +44,10 @@ bool isEmptyPair(Pair* pair)
 {
   if(pair != NULL)
   {
-    if (pair->key == NULL)
-      return true;
-    else
-      return false;
+    return true;
   }
 
-  return true;
+  return false;
 }
 
 void insertMap(HashMap *map, char *key, void *value) {
