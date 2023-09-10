@@ -135,6 +135,8 @@ Pair *firstMap(HashMap *map)
       if (pos == temp)
         return NULL;
     }
+
+  map->current = pos;
   
   return map->buckets[pos];
 }
