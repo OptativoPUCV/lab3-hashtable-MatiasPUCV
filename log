@@ -406,3 +406,17 @@ Sun 10 Sep 2023 06:27:21 PM UTC:
  tests:  15|2
 total_score: 50/70
 db58a37
+Sun 10 Sep 2023 06:28:12 PM UTC: 
+ hashmap.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:128:12: error: format ‘%i’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Werror=format=]
+  128 |   printf("%i\n", map->capacity);
+      |           ~^     ~~~~~~~~~~~~~
+      |            |        |
+      |            int      long int
+      |           %li
+cc1: all warnings being treated as errors
+Compilation failed
+df5c304
