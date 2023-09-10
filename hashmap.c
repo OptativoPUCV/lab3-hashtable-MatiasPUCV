@@ -128,12 +128,10 @@ Pair *firstMap(HashMap *map)
   
   long pos = map->current;
   long temp = pos;
-  
-  printf("%ld \n", pos);
 
   while (!isEmptyPair(map->buckets[pos]))
     {
-      pos = (pos + 1) % map->capacity;
+      pos = (pos + 1) % map->capacity - 1;
 
       if (pos == temp)
         return NULL;
@@ -146,7 +144,7 @@ Pair *firstMap(HashMap *map)
 
 Pair *nextMap(HashMap *map)
 {
-   long pos = (map->current + 1) % map->capacity;
+   long pos = (map->current + 1) % map->capacity - 1;
     map->current = pos;
 
   return firstMap(map);
