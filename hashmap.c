@@ -82,9 +82,9 @@ HashMap *createMap(long capacity) {
 }
 
 void eraseMap(HashMap *map, char *key) {
-  long pos = hash(key, map->capacity);
+  long pos = hash(key, map->capacity) % map->capacity;
 
-  if (isEmptyPair(map->buckets[pos])) {
+  if (!isEmptyPair(map->buckets[pos])) {
     map->buckets[pos]->key = NULL;
     map->size--;
   }
@@ -92,7 +92,6 @@ void eraseMap(HashMap *map, char *key) {
 
 bool searchHelper(Pair *pair, char *key) {
   if (pair != NULL) {
-    printf("%s \n", pair->key);
     return is_equal(pair->key, key);
   }
 
@@ -106,7 +105,7 @@ Pair *searchMap(HashMap *map, char *key) {
   while (!searchHelper(map->buckets[pos], key))
     pos = (pos + 1) % map->capacity;
 
-  
+  map->capacity = pos;
 
   return map->buckets[pos];
 }
