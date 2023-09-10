@@ -159,3 +159,13 @@ Sun 10 Sep 2023 02:34:33 AM UTC:
  tests:  6|4
 total_score: 30/70
 eedcce0
+Sun 10 Sep 2023 02:41:28 AM UTC: 
+ hashmap.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+In file included from test.c:4:
+hashmap.c:4:21: error: extra tokens at end of #include directive [-Werror]
+    4 | #include <stdbool.h>>
+      |                     ^
+cc1: all warnings being treated as errors
+Compilation failed
+832a6d1

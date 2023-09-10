@@ -1,6 +1,7 @@
 #include "hashmap.h"
 #include <ctype.h>
 #include <math.h>
+#include <stdbool.h>>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -49,6 +50,17 @@ void insertMap(HashMap *map, char *key, void *value) {
   while (map->buckets[pos] != NULL)
     pos = (pos + 1) % map->capacity;
 
+  bool end = false;
+  while (!end) {
+    if (map->buckets[pos] != NULL) {
+      pos = (pos + 1) % map->capacity;
+      end = true;
+    } else if (map->buckets[pos]->key == NULL) {
+      pos = (pos + 1) % map->capacity;
+      end = true;
+    }
+  }
+
   map->buckets[pos] = createPair(key, value);
 
   map->size++;
@@ -76,7 +88,6 @@ void eraseMap(HashMap *map, char *key) {}
 Pair *searchMap(HashMap *map, char *key) {
   long pos = hash(key, map->capacity);
   map->current = pos;
-
 
   return map->buckets[pos];
 }
