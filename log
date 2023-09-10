@@ -566,3 +566,8 @@ hashmap.c:76:10: error: unused variable ‘old’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 12493a9
+Sun 10 Sep 2023 07:48:44 PM UTC: 
+ hashmap.c | 1 -
+ 1 file changed, 1 deletion(-)
+ tests:  0|0
+1e6de5b
